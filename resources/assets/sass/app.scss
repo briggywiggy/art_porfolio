@@ -8,7 +8,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Animate.css
+@import '~animate.css/animate.min.css';
+
+//Flexslider
+@import '~flexslider/flexslider.css';
+
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.route-template {
+height: 100vh;
 }
