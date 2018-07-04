@@ -24,14 +24,10 @@
         "animejs": "^2.2.0",
         "flexslider": "^2.7.1",
         "grunt": "^1.0.3",
-        "hamburgers": "^0.9.3",
-        "images-loaded": "^1.0.0",
         "imagesloaded": "^4.1.4",
         "url-loader": "^1.0.1",
-        "vue-images-loaded": "^1.1.2",
         "vue-loader": "^14.2.3",
         "vue-router": "^3.0.1",
-        "vue-scrollto": "^2.11.0",
         "vuex": "^3.0.1"
     }
 }
