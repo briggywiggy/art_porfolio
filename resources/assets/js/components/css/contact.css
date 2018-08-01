@@ -1,0 +1,22 @@
+.content-wrapper {
+	background: url('/img/contact/bubbles.png') no-repeat 0 0,url('/img/contact/bg.png') no-repeat center bottom;
+	background-size: 90% 100%, contain;
+	font-family: goodDogPlain;
+	font-weight: bold;
+	font-size: 24px;
+	height: 100vh;
+	width: 100%;
+}
+.intro-text {
+	position: relative;
+	top: 15%;
+	left: 17.5%;
+}
+.bubble-text {
+	font-size: 18px;
+	height: 30%;
+	width: 25%;
+	position: relative;
+	top: 25%;
+	left: 12.5%;
+}

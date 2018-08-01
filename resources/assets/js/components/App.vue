@@ -1,35 +1,38 @@
 <template>
 	<div class="template-wrapper">
-		<!-- <h1>Vue Router Demo App</h1>
-
-		<p>
-			<router-link :to="{ name: 'home' }">Home</router-link>
-		</p>
-
-		<div class="container">
-			<router-view></router-view>
-		</div> -->
-		<off-canvas></off-canvas>
-		<router-view class="router-view" :class="{'off-canvas' : $store.state.offCanvas}"></router-view>
+		<preloader></preloader>
+		<router-view class="router-view"></router-view>
 	</div>
 </template>
 
-<style type="text/css" scoped>
+<style type="text/css">
+html,
+body {
+	height: 100%;
+}
 @font-face {
 	font-family: goodDogPlain;
 	src: url(../../fonts/good_dog/GOODDP__.ttf);
 }
-.router-view {
-	margin-left: 5%;
-	transition: 0.5s;
+@font-face {
+	font-family: varelaRound;
+	src: url(../../fonts/varela_round/VarelaRound-Regular.ttf);
 }
-.router-view.off-canvas {
-	margin-left: 15%;
+@font-face {
+	font-family: josefinSans;
+	src: url(../../fonts/josefin_sans/JosefinSans-Regular.ttf);
 }
+</style>
+
+<style type="text/css" scoped>
 </style>
 
 <script type="text/javascript" scoped>
 	export default {
+		watch: {
+			$route(to, from) {
+			}
+		},
 		mounted() {
 		}
 	}

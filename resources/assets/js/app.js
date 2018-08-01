@@ -18,24 +18,17 @@
 
  import App from './components/App'
  import Home from './components/Home'
- import About from './components/About'
  import Gallery from './components/Gallery'
- import Contact from './components/Contact'
  import PageNotFound from './components/PageNotFound'
-
- import UsersIndex from './components/UsersIndex'
 
  const router = new VueRouter({
  	mode: 'history',
  	linkActiveClass: 'active',
+ 	linkExactActiveClass: "exact-active",
  	routes: [
- 	{ path: '/', name: 'index', component: Home },
- 	{ path: '/home', name: 'home', component: Home },
- 	{ path: '/about', name: 'about', component: About },
+ 	{ path: '/', name: 'home', component: Home },
  	{ path: '/gallery', name: 'gallery', component: Gallery },
- 	{ path: '/contact', name: 'contact', component: Contact },
  	{ path: '*', name: 'pagenotfound', component: PageNotFound },
- 	{ path: '/users', name: 'users.index', component: UsersIndex },
  	]
  })
 
@@ -44,6 +37,25 @@
  	state: {
  		message: 'Hello!',
  		offCanvas: false,
+
+ 		//Room
+ 		DOM: {},
+ 		currentRoom: null,
+ 		totalRooms: null,
+ 		initTransform: {},
+ 		resetTransform: {},
+ 		menuTransform: {},
+ 		infoTransform: {},
+ 		initTransition: {},
+ 		roomTransition: {},
+ 		menuTransition: {},
+ 		infoTransition: {},
+ 		tiltTransition: {},
+ 		tilt: null,
+ 		tiltRotation: {},
+ 		win: {},
+ 		isMoving: null,
+ 		isNavigating: null,
  	}
  })
 
@@ -55,9 +67,10 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- import OffCanvas from './components/OffCanvas.vue'
+ //Global Components
+ import Preloader from './components/Preloader.vue'
 
- Vue.component('off-canvas', OffCanvas);
+ Vue.component('preloader', Preloader);
 
  const app = new Vue({
  	el: '#app',

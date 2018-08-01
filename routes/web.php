@@ -16,3 +16,4 @@
 // });
 
 Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+Auth::routes();

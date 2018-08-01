@@ -1,18 +1,26 @@
 <template>
-	<div class="template-wrapper route-template">
-		<div class="flexslider">
+	<div class="template-wrapper home-template">
+		<!-- <landing></landing> -->
+		<!-- <div class="flexslider images-loaded">
 			<ul class="slides">
 				<li>
-					<div class="first-slide">weee</div>
+					<div>
+						<img :src="'/img/gallery/charcoal/compressed/1.jpg'">
+					</div>
 				</li>
 				<li>
-					<div class="second-slide">waaa</div>
+					<div>
+						<img :src="'/img/gallery/digital/compressed/6.jpg'">
+					</div>
 				</li>
 				<li>
-					<div class="third-slide">woooo</div>
+					<div>
+						<img :src="'/img/gallery/digital/compressed/5.jpg'">
+					</div>
 				</li>
 			</ul>
-		</div>
+		</div> -->
+		<gallery></gallery>
 	</div>
 </template>
 
@@ -25,30 +33,19 @@
 }
 .flexslider .slides li div {
 	height: 100vh;
-	padding: 10px;
+	position: relative;
 }
 
-.first-slide {
-	background: url('/img/bg1.png');
-	background-position: center center;
-	background-size: cover;
-}
-
-.second-slide,
-.third-slide {
-	color: white;
-}
-
-.second-slide {
-	background: url('/img/bg2.png');
-	background-position: center center;
-	background-size: cover;
-}
-
-.third-slide {
-	background: url('/img/bg3.png');
-	background-position: center center;
-	background-size: cover;
+.flexslider .slides li div img {
+	display: block;
+	height: 100%;
+	width: auto;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 /deep/ .flex-control-nav {
@@ -67,29 +64,34 @@
 </style>
 
 <script type="text/javascript" scoped>
+	import Gallery from './Gallery.vue';
+
 	export default {
+		components: {
+			'gallery': Gallery,
+		},
 		data() {
 			return {
 				currentSlide: null,
 			}
 		},
 		methods: {
-			flexsliderStart() {
+			imagesLoadedCallback() {
 				var self = this;
+
+				$('.flexslider').flexslider({
+					animation: 'slide',
+					direction: 'vertical',
+					directionNav: false,
+					pauseOnHover: true,
+					after: function(slider){
+						self.currentSlide = slider.currentSlide;
+					},
+				});
 			}
 		},
 		mounted() {
 			var self = this;
-			$('.flexslider').flexslider({
-				animation: 'slide',
-				direction: 'vertical',
-				directionNav: false,
-				pauseOnHover: true,
-				after: function(slider){
-					self.currentSlide = slider.currentSlide;
-					self.flexsliderStart();
-				},
-			});
 		}
 	}
 </script>

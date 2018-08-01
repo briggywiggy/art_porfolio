@@ -1,7 +1,6 @@
 <template>
 	<div class="template-wrapper route-template">
-		<h1>page not found</h1>
-		<p>{{ sampleData }}</p>
+		<h1>Error 404: page not found</h1>
 	</div>
 </template>
 
@@ -9,7 +8,6 @@
 	export default {
 		data() {
 			return {
-				sampleData: 'test',
 			}
 		},
 
