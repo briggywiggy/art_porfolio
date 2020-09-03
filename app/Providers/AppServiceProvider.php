@@ -17,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
         //
         Schema::defaultStringLength(191);
 
+        if(config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
+
         // Uncomment on shared hosting
         // $this->app->bind('path.public', function() {
         //     return base_path().'/../public_html';
